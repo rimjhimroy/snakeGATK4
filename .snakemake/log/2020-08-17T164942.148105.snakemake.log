@@ -1,0 +1,302 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 9999
+Conda environments: ignored
+Job counts:
+	count	jobs
+	21	HaplotypeCaller
+	21
+
+[Mon Aug 17 17:05:32 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/B2_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/B2_raw_variants_1.vcf.gz
+    jobid: 0
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_B2.json
+    wildcards: sample=B2
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/B2_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/B2_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 0 with external jobid 'Submitted batch job 32679664'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg34_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg34_raw_variants_1.vcf.gz
+    jobid: 2
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg34.json
+    wildcards: sample=pg34
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg34_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg34_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 2 with external jobid 'Submitted batch job 32679665'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/A2Sch_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/A2Sch_raw_variants_1.vcf.gz
+    jobid: 4
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_A2Sch.json
+    wildcards: sample=A2Sch
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/A2Sch_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/A2Sch_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 4 with external jobid 'Submitted batch job 32679666'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg38_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg38_raw_variants_1.vcf.gz
+    jobid: 7
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg38.json
+    wildcards: sample=pg38
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg38_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg38_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 7 with external jobid 'Submitted batch job 32679667'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/A2_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/A2_raw_variants_1.vcf.gz
+    jobid: 9
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_A2.json
+    wildcards: sample=A2
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/A2_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/A2_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 9 with external jobid 'Submitted batch job 32679668'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg41_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg41_raw_variants_1.vcf.gz
+    jobid: 12
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg41.json
+    wildcards: sample=pg41
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg41_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg41_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 12 with external jobid 'Submitted batch job 32679669'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg5_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg5_raw_variants_1.vcf.gz
+    jobid: 15
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg5.json
+    wildcards: sample=pg5
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg5_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg5_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 15 with external jobid 'Submitted batch job 32679670'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg31_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg31_raw_variants_1.vcf.gz
+    jobid: 14
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg31.json
+    wildcards: sample=pg31
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg31_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg31_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 14 with external jobid 'Submitted batch job 32679671'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/V2_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/V2_raw_variants_1.vcf.gz
+    jobid: 17
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_V2.json
+    wildcards: sample=V2
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/V2_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/V2_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 17 with external jobid 'Submitted batch job 32679672'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/K2_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/K2_raw_variants_1.vcf.gz
+    jobid: 18
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_K2.json
+    wildcards: sample=K2
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/K2_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/K2_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 18 with external jobid 'Submitted batch job 32679673'.
+
+[Mon Aug 17 17:05:33 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg17_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg17_raw_variants_1.vcf.gz
+    jobid: 53
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg17.json
+    wildcards: sample=pg17
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg17_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg17_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 53 with external jobid 'Submitted batch job 32679674'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg2_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg2_raw_variants_1.vcf.gz
+    jobid: 28
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg2.json
+    wildcards: sample=pg2
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg2_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg2_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 28 with external jobid 'Submitted batch job 32679675'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg42_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg42_raw_variants_1.vcf.gz
+    jobid: 29
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg42.json
+    wildcards: sample=pg42
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg42_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg42_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 29 with external jobid 'Submitted batch job 32679676'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg36_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg36_raw_variants_1.vcf.gz
+    jobid: 35
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg36.json
+    wildcards: sample=pg36
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg36_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg36_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 35 with external jobid 'Submitted batch job 32679678'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg43_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg43_raw_variants_1.vcf.gz
+    jobid: 41
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg43.json
+    wildcards: sample=pg43
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg43_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg43_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 41 with external jobid 'Submitted batch job 32679679'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/P2_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/P2_raw_variants_1.vcf.gz
+    jobid: 46
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_P2.json
+    wildcards: sample=P2
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/P2_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/P2_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 46 with external jobid 'Submitted batch job 32679680'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg23_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg23_raw_variants_1.vcf.gz
+    jobid: 47
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg23.json
+    wildcards: sample=pg23
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg23_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg23_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 47 with external jobid 'Submitted batch job 32679681'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/La4_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/La4_raw_variants_1.vcf.gz
+    jobid: 49
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_La4.json
+    wildcards: sample=La4
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/La4_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/La4_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 4         --tmp-dir ./tmp
+        
+Submitted job 49 with external jobid 'Submitted batch job 32679682'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg13_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg13_raw_variants_1.vcf.gz
+    jobid: 50
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg13.json
+    wildcards: sample=pg13
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg13_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg13_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 50 with external jobid 'Submitted batch job 32679683'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg40_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg40_raw_variants_1.vcf.gz
+    jobid: 52
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg40.json
+    wildcards: sample=pg40
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg40_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg40_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 52 with external jobid 'Submitted batch job 32679684'.
+
+[Mon Aug 17 17:05:34 2020]
+rule HaplotypeCaller:
+    input: data/genome/biscutV2.1_new.fa, analysis/merged_samples/pg4_aligned_duplicates_marked_sorted_merged.bam
+    output: analysis/gvcf/pg4_raw_variants_1.vcf.gz
+    jobid: 26
+    benchmark: benchmarks/HaplotypeCaller/HaplotypeCaller_pg4.json
+    wildcards: sample=pg4
+    threads: 12
+
+
+        gatk --java-options "-Xmx20G -XX:GCTimeLimit=50 -XX:GCHeapFreeLimit=10"         HaplotypeCaller         --pair-hmm-implementation AVX_LOGLESS_CACHING_OMP         --native-pair-hmm-threads 12         --pcr-indel-model NONE         -R data/genome/biscutV2.1_new.fa         -I analysis/merged_samples/pg4_aligned_duplicates_marked_sorted_merged.bam         -L scaffolds.list         -O analysis/gvcf/pg4_raw_variants_1.vcf.gz         -contamination 0 -ERC GVCF         -ploidy 2         --tmp-dir ./tmp
+        
+Submitted job 26 with external jobid 'Submitted batch job 32679685'.

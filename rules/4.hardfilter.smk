@@ -17,6 +17,7 @@ rule selectSNPs:
         gatk SelectVariants \
         -V {input} \
         -select-type SNP \
+        -select-type NO_VARIATION \
         -O {output}
         """
 
@@ -50,6 +51,7 @@ rule hardfilterSNPs:
         -filter "MQ < 40.0" --filter-name "MQ40" \
         -filter "MQRankSum < -12.5" --filter-name "MQRankSum-12.5" \
         -filter "ReadPosRankSum < -8.0" --filter-name "ReadPosRankSum-8" \
+        --set-filtered-genotype-to-no-call true \
         -O {output}
         """
 
@@ -66,6 +68,7 @@ rule hardfilterINDELs:
         -filter "QUAL < 30.0" --filter-name "QUAL30" \
         -filter "FS > 200.0" --filter-name "FS200" \
         -filter "ReadPosRankSum < -20.0" --filter-name "ReadPosRankSum-20" \
+        --set-filtered-genotype-to-no-call true \
         -O {output}
         """
 

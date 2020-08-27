@@ -1,0 +1,208 @@
+{
+    "__default__":
+    {
+        "account" : "rchoudhury",
+        "time" : "1-0",
+        "cpu" : 1,
+        "partition" : "all",
+        "mem"   : "20G",
+        "name"  : "{rule}",
+        "output": "output/slurm_out/{rule}_%j.out",
+        "error": "output/slurm_out/{rule}_%j.err"
+    },
+    "genomeCov":
+    {
+        "name"  : "{rule}.{wildcards.prefix}",
+        "output": "output/slurm_out/{rule}_{wildcards.prefix}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.prefix}_%j.err"
+    },
+    "trim_pe":
+    {
+        "time"  : "2-0",
+        "mem"   : "10G",
+        "name"  : "{rule}.{wildcards.prefix}",
+        "output": "output/slurm_out/{rule}_{wildcards.prefix}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.prefix}_%j.err"
+    },
+    "fastqc":
+    {
+        "cpu" : 10,
+        "name"  : "{rule}.{wildcards.prefix}",
+        "output": "output/slurm_out/{rule}_{wildcards.prefix}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.prefix}_%j.err"
+    },
+
+    "bamstats":
+    {
+        "mem"   : "10G",
+        "name"  : "{rule}.{wildcards.prefix}",
+        "output": "output/slurm_out/{rule}_{wildcards.prefix}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.prefix}_%j.err"
+    },
+
+    "fastq2ubam":
+    {
+        "name"  : "{rule}.{wildcards.prefix}",
+        "output": "output/slurm_out/{rule}_{wildcards.prefix}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.prefix}_%j.err"
+    },
+
+    "SamToFastqAndBwaMem":
+    {
+        "time"  : "2-0",
+        "mem"   : "10G",
+        "cpu" : 16,
+        "name"  : "{rule}.{wildcards.prefix}",
+        "output": "output/slurm_out/{rule}_{wildcards.prefix}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.prefix}_%j.err"
+    },
+
+    "MergeBamAlignment":
+    {
+        "mem"   : "20G",
+        "name"  : "{rule}.{wildcards.prefix}",
+        "output": "output/slurm_out/{rule}_{wildcards.prefix}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.prefix}_%j.err"
+    },
+
+    "MarkDuplicates":
+    {
+        "mem"   : "30G",
+        "name"  : "{rule}.{wildcards.prefix}",
+        "output": "output/slurm_out/{rule}_{wildcards.prefix}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.prefix}_%j.err"
+    },
+
+    "SortAndFixTags":
+    {
+        "mem"   : "10G",
+        "name"  : "{rule}.{wildcards.prefix}",
+        "output": "output/slurm_out/{rule}_{wildcards.prefix}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.prefix}_%j.err"
+    },
+    "MergeBamLanes":
+    {
+        "mem"   : "10G",
+        "name"  : "{rule}.{wildcards.sample}",
+        "output": "output/slurm_out/{rule}_{wildcards.sample}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.sample}_%j.err"
+    },
+    "BQSR_Pass1":
+    {
+        "cpu" : 4,
+        "time"  : "4-0",
+        "mem"   : "20G",
+        "name"  : "{rule}.{wildcards.sample}",
+        "output": "output/slurm_out/{rule}_{wildcards.sample}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.sample}_%j.err"
+    },
+    "ApplyBQSR":
+    {
+        "cpu" : 4,
+        "time"  : "4-0",
+        "mem"   : "20G",
+        "name"  : "{rule}.{wildcards.sample}",
+        "output": "output/slurm_out/{rule}_{wildcards.sample}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.sample}_%j.err"
+    },
+    "BQSR_Pass2":
+    {
+        "cpu" : 4,
+        "time"  : "4-0",
+        "mem"   : "20G",
+        "name"  : "{rule}.{wildcards.sample}",
+        "output": "output/slurm_out/{rule}_{wildcards.sample}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.sample}_%j.err"
+    },
+    "ApplyBQSR2":
+    {
+        "cpu" : 4,
+        "time"  : "4-0",
+        "mem"   : "20G",
+        "name"  : "{rule}.{wildcards.sample}",
+        "output": "output/slurm_out/{rule}_{wildcards.sample}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.sample}_%j.err"
+    },
+    "HaplotypeCaller":
+    {
+        "cpu" : 12,
+        "time"  : "4-0",
+        "mem"   : "100G",
+        "name"  : "{rule}.{wildcards.sample}",
+        "output": "output/slurm_out/{rule}_{wildcards.sample}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.sample}_%j.err"
+    },
+
+    "HaplotypeCaller2":
+    {
+        "cpu" : 12,
+        "time"  : "4-0",
+        "mem"   : "100G",
+        "name"  : "{rule}.{wildcards.sample}",
+        "output": "output/slurm_out/{rule}_{wildcards.sample}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.sample}_%j.err"
+    },
+
+    "WriteSampleMap":
+    {
+        "output": "output/slurm_out/{rule}_%j.out",
+        "error": "output/slurm_out/{rule}_%j.err"
+    },
+    "GenomicsDBImport":
+    {
+        "mem"   : "6G",
+        "name"  : "{rule}.{wildcards.scaffold}",
+        "output": "output/slurm_out/{rule}_{wildcards.scaffold}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.scaffold}_%j.err"
+    },
+
+    "GenotypeGVCFs":
+    {
+        "mem"   : "10G",
+        "name"  : "{rule}.{wildcards.scaffold}",
+        "output": "output/slurm_out/{rule}_{wildcards.scaffold}_%j.out",
+        "error": "output/slurm_out/{rule}_{wildcards.scaffold}_%j.err"
+    },
+
+    "GatherVcfs":
+    {
+        "mem"   : "30G",
+        "name"  : "{rule}",
+        "output": "output/slurm_out/{rule}_%j.out",
+        "error": "output/slurm_out/{rule}_%j.err"
+    },
+
+    "selectSNPs":
+    {
+        "mem"   : "20G",
+        "name"  : "{rule}",
+        "output": "output/slurm_out/{rule}_%j.out",
+        "error": "output/slurm_out/{rule}_%j.err"
+    },
+    
+    "selectINDELs":
+    {
+        "mem"   : "20G",
+        "name"  : "{rule}",
+        "output": "output/slurm_out/{rule}_%j.out",
+        "error": "output/slurm_out/{rule}_%j.err"
+    },
+
+    "hardfilterSNPs":
+    {
+        "mem"   : "20G",
+        "name"  : "{rule}",
+        "output": "output/slurm_out/{rule}_%j.out",
+        "error": "output/slurm_out/{rule}_%j.err"
+    },
+
+    "hardfilterINDELs":
+    {
+        "mem"   : "10G",
+        "name"  : "{rule}",
+        "output": "output/slurm_out/{rule}_%j.out",
+        "error": "output/slurm_out/{rule}_%j.err"
+    }
+}
+
+

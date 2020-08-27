@@ -1,10 +1,18 @@
 GENOME:
-    "data/genome/E.coli_K12_MG1655.fa"
+    "data/genome/biscutV2.1_new.fa"
+
+# set SCAFFOLDS as "ALL" if you want to run on all scaffolds :: impliment only if limited number of scaffolds, else split snakemake into multiple jobs :: test it
+# else give a txt file with names of scaffolds (one per line)
+SCAFFOLDS:
+    "ALL"
+
+META:
+    "test.tsv"
 
 trim : True
-tmpdir: "/scratch/jc502059/mapping"
+tmpdir: "tmp"
 suffix : ["_1","_2"]
-platform : "NovaSeq6000_S4"
+platform : "A00574"
 
 fastqc_threads: 10
 trim_threads: 10
