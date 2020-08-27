@@ -2,7 +2,9 @@ data/
 analysis/
 logs/
 output/
-benchmark/
+benchmarks/
 redo/
 test/
+.snakemake/
+tmp/
 *.txt
