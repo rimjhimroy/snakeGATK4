@@ -1,6 +1,0 @@
-CalledProcessError in line 50 of /gpfs/homefs/ips/rchoudhury/snakemake-gatk4-non-model/rules/2.preprocessing.smk:
-Command 'bwa 2>&1 | grep -e 'Version'' returned non-zero exit status 1.
-  File "/gpfs/homefs/ips/rchoudhury/snakemake-gatk4-non-model/SnakeGATK1", line 55, in <module>
-  File "/gpfs/homefs/ips/rchoudhury/snakemake-gatk4-non-model/rules/2.preprocessing.smk", line 50, in <module>
-  File "/home/ubelix/ips/rchoudhury/miniconda3/envs/snakemake/lib/python3.6/subprocess.py", line 336, in check_output
-  File "/home/ubelix/ips/rchoudhury/miniconda3/envs/snakemake/lib/python3.6/subprocess.py", line 418, in run
