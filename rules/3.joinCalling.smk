@@ -5,7 +5,7 @@ import os
 """
 This workflow involves pre-processing the raw sequence data (uBAM format) to produce analysis-ready BAM files. Recalibrate Base Quality Scores is not included since our organism does not have know SNPs database.
 """
-VCF,=glob_wildcards("analysis/gvcf/{sample}.g.vcf.gz")
+VCF,=glob_wildcards("analysis/gvcf2/{sample}.g.vcf.gz")
 
 #today = datetime.today().strfmt('%Y-%m-%d')
 
@@ -27,7 +27,6 @@ rule GenomicsDBImport:
         "sample_map.txt",
         lambda wildcards: expand("analysis/gvcf2/{vcf}.g.vcf.gz", vcf=samples["sample"].drop_duplicates())
     output:
-        db = directory("analysis/genomicsDB/{scaffold}.db"),
         tar = "analysis/genomicsDB/{scaffold}.db.tar"
     
     shell:
@@ -39,20 +38,22 @@ rule GenomicsDBImport:
         --sample-name-map sample_map.txt \
         --reader-threads 5 \
         --batch-size 10 \
-        --tmp-dir=./tmp
+        --tmp-dir ./tmp
 
         tar -cf {output.tar} {output.db}
+	rm -r {output.db}
         """
 
 rule GenotypeGVCFs:
     input:
-        "analysis/genomicsDB/{scaffold}.db"
+        "analysis/genomicsDB/{scaffold}.db.tar"
     output:
         "analysis/vcf/{scaffold}.vcf.gz"
     benchmark:
         "benchmarks/GenotypeGVCFs/GenotypeGVCFs_{scaffold}.json"
     shell:
         """
+	tar -xf {scaffold}.db.tar -C {scaffold}.db
         gatk --java-options "-Xmx8g -Xms8g" \
         GenotypeGVCFs \
         -R {REFERENCE} \

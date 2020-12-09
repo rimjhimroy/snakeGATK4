@@ -2,8 +2,8 @@
     "__default__":
     {
         "account" : "rchoudhury",
-        "time" : "1-0",
-        "cpu" : 1,
+        "time" : "2-0",
+        "cpu" : 4,
         "partition" : "all",
         "mem"   : "20G",
         "name"  : "{rule}",
@@ -150,7 +150,7 @@
     },
     "GenomicsDBImport":
     {
-        "mem"   : "6G",
+        "mem"   : "24G",
         "name"  : "{rule}.{wildcards.scaffold}",
         "output": "output/slurm_out/{rule}_{wildcards.scaffold}_%j.out",
         "error": "output/slurm_out/{rule}_{wildcards.scaffold}_%j.err"
