@@ -27,8 +27,8 @@ rule GenomicsDBImport:
         "sample_map.txt",
         lambda wildcards: expand("analysis/gvcf2/{vcf}.g.vcf.gz", vcf=samples["sample"].drop_duplicates())
     output:
-        tar = "analysis/genomicsDB/{scaffold}.db.tar"
-    
+        tar = "analysis/genomicsDB/{scaffold}.db.tar",
+        db = temp("analysis/genomicsDB/{scaffold}.db")
     shell:
         """
         gatk --java-options "-Xmx4g -Xms4g" \
@@ -41,30 +41,28 @@ rule GenomicsDBImport:
         --tmp-dir ./tmp
 
         tar -cf {output.tar} {output.db}
-	rm -r {output.db}
         """
 
 rule GenotypeGVCFs:
     input:
         "analysis/genomicsDB/{scaffold}.db.tar"
     output:
-        "analysis/vcf/{scaffold}.vcf.gz"
+        vcf="analysis/vcf/{scaffold}.vcf.gz",
+        db = temp("analysis/genomicsDB/{scaffold}.db")
     benchmark:
         "benchmarks/GenotypeGVCFs/GenotypeGVCFs_{scaffold}.json"
     shell:
         """
-	tar -xf {scaffold}.db.tar -C {scaffold}.db
+	    tar -xf {input} -C .
         gatk --java-options "-Xmx8g -Xms8g" \
         GenotypeGVCFs \
         -R {REFERENCE} \
-        -O {output} \
+        -O {output.vcf} \
         --only-output-calls-starting-in-intervals \
         --include-non-variant-sites \
-        -V gendb://{input} \
+        -V gendb://{output.db} \
         -L {wildcards.scaffold} \
         --tmp-dir ./tmp
-
-        rm -r {input}
         """
 
 rule GatherVcfs:
