@@ -2,7 +2,7 @@
     "__default__":
     {
         "account" : "rchoudhury",
-        "time" : "2-0",
+        "time" : "4-0",
         "cpu" : 4,
         "partition" : "all",
         "mem"   : "20G",

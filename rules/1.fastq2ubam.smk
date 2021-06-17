@@ -13,7 +13,7 @@ rule fastq2ubam:
         unpack(get_fastq2)
     output:
         bam="data/ubam/{prefix}.unaligned_reads.bam",
-	bai="data/ubam/{prefix}.unaligned_reads.bam.bai"
+	    bai="data/ubam/{prefix}.unaligned_reads.bam.bai"
     benchmark:
         "benchmarks/fastq2ubam/fastq2ubam_{prefix}.json"
     params:

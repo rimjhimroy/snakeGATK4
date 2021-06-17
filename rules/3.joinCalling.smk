@@ -28,7 +28,7 @@ rule GenomicsDBImport:
         lambda wildcards: expand("analysis/gvcf2/{vcf}.g.vcf.gz", vcf=samples["sample"].drop_duplicates())
     output:
         tar = "analysis/genomicsDB/{scaffold}.db.tar",
-        db = temp("analysis/genomicsDB/{scaffold}.db")
+        db = temp(directory("analysis/genomicsDB/{scaffold}.db"))
     shell:
         """
         gatk --java-options "-Xmx4g -Xms4g" \
@@ -47,8 +47,7 @@ rule GenotypeGVCFs:
     input:
         "analysis/genomicsDB/{scaffold}.db.tar"
     output:
-        vcf="analysis/vcf/{scaffold}.vcf.gz",
-        db = temp("analysis/genomicsDB/{scaffold}.db")
+        vcf="analysis/vcf/{scaffold}.vcf.gz"
     benchmark:
         "benchmarks/GenotypeGVCFs/GenotypeGVCFs_{scaffold}.json"
     shell:
@@ -60,9 +59,11 @@ rule GenotypeGVCFs:
         -O {output.vcf} \
         --only-output-calls-starting-in-intervals \
         --include-non-variant-sites \
-        -V gendb://{output.db} \
+        -V gendb://analysis/genomicsDB/{wildcards.scaffold}.db \
         -L {wildcards.scaffold} \
         --tmp-dir ./tmp
+
+        rm -r analysis/genomicsDB/{wildcards.scaffold}.db
         """
 
 rule GatherVcfs:
