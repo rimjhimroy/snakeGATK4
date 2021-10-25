@@ -17,7 +17,12 @@ When working with PCR-free libraries (e.g., trueseq), add `--pcr-indel-model NON
 1. prepare metadata.tsv.
 2. modify config.yaml if needed.
 3. create `output/slurm_out` and `tmp` folders
-4. `snakemake -n` 
+4. Activate gatk4 `conda activate gatk4`
+5. `snakemake -s snakeGATK1 -n` 
+6. Create reference index in data/genome folder:
+`gatk --java-options '-Xmx8g -Xms8g' CreateSequenceDictionary -R ref.fasta -O ref.dict`
+`samtools faidx ref.fasta`
+`bwa index -a *.fasta`
 
 **To run on Slurm HPC:**
 
