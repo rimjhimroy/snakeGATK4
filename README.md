@@ -22,7 +22,7 @@ When working with PCR-free libraries (e.g., trueseq), add `--pcr-indel-model NON
 6. Create reference index in data/genome folder:
 `gatk --java-options '-Xmx8g -Xms8g' CreateSequenceDictionary -R ref.fasta -O ref.dict`
 `samtools faidx ref.fasta`
-`bwa index -a *.fasta`
+`bwa index *.fasta`
 
 **To run on Slurm HPC:**
 
